@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <title>
+        BCA-WARRIOR
+    </title>
+    <link rel="icon" href="image3.png">
+</head>
+
+
+<body>
+   <center>
+   
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp;BCA-WARRIORS</h1>
+   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+   <img src="image3.png">
+   </center> 
+</body>
+</html>
+
+
+
+<hr>
+&nbsp;
+<br>
+&nbsp;
+
+<!--COPY CODE-->
+
+<html lang="en">
+
+<body>
+    <form
+        id = "form"
+        class = "mx-auto my-5 shadow p-2"
+        method = "POST"
+    >
+    <!-- action= will be set by javascript -->
+    <center>
+    <div class="mb-1 d-flex">
+            <label class="mx-3" for="customer" >NAME &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+            <input
+                placeholder="Enter your Name"
+                type="text"
+                class="mx-3 form-control"
+                id="NAME"
+                name="NAME"
+                style="text-align: center;"
+                list="NAMES"
+            />
+            <br>
+            <br>
+            <datalist id="NAMES">
+                <!-- javascript will add options here -->
+            </datalist>
+            <div class="mb-1 d-flex">
+                <label class="mx-3" for="COURSE"> GROUP :&nbsp;&nbsp;&nbsp;</label>
+                <select class="mx-3 form-control" id="COURSE" name="COURSE" list="COURSE" style="width: 185px;"" > 
+                    <option value="" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Choose an option--</option>
+                    <option value="BCA">BCA</option>
+                    <option value="BSC">BSc Computer Science</option>
+                    <option value="BBA">BBA</option>
+                </select>
+            </div>
+            <br>
+            <datalist id="phones">
+                <!-- javascript will add options here -->
+            </datalist>
+        </div>
+        <div class="mb-1 d-flex">
+            <label class="mx-3" for="ROLL NO">ROLL NO :</label>
+            <input
+                placeholder="&nbsp;&nbsp;Enter Roll Number"
+                type="text"
+                class="mx-3 form-control"
+                id="ROLL NO"
+                name="ROLL NO"
+                style="text-align: center;"
+                list="addresses"
+            />
+            <br>
+            <br>
+            <datalist id="addresses">              
+         <!-- javascript will add options here -->                
+            </datalist>
+        </div>
+        <div class="mb-1 d-flex">
+            <label class="mx-3" for="Prices">MOBILE&nbsp; &nbsp;:</label>
+            <input
+                placeholder=" &nbsp;Enter Mobile Number"
+                type="text"
+                class="mx-3 form-control"
+                id="MOBILE"
+                name="MOBILE"
+                maxlength="10"
+                style="text-align: center;"
+                list="MOBILE"
+
+                
+            />
+        </div>  
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+        <button type="submit" class="btn btn-primary">Submit</button>
+         &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="reset" class="btn btn-primary">Reset</button>
+    </center>
+    </form>
+    <script>
+        const url = "https://script.google.com/macros/s/AKfycbxAiFaHa9ivEtRoXDkl2KGKR7abPvpEj5O4UPAYUPo981DQPxkgye5VaNEJFbGlUL5M/exec" // enter your public ('access' - 'anyone') deployment URL (NOT test deployment!)
+        document.getElementById('form').action = url;
+
+        // fetching the data from each column in the sheet
+        // then populating the respective datalist
+        fetch(`${url}?header=Customer`)
+            .then((response) => response.json())
+            .then(({ data }) => {
+                console.log(data);
+                populateDatalists("NAMES", data)
+            })
+            .catch((error) => console.error('!!!!!!!!', error));
+
+        fetch(`${url}?header=Phone`)
+            .then((response) => response.json())
+            .then(({ data }) => {
+                console.log(data);
+                populateDatalists("phones", data)
+            })
+            .catch((error) => console.error('!!!!!!!!', error));
+        
+        fetch(`${url}?header=Address`)
+            .then((response) => response.json())
+            .then(({ data }) => {
+                console.log(data);
+                populateDatalists("addresses", data)
+            })
+            .catch((error) => console.error('!!!!!!!!', error));
+
+        // function to add options to datalists
+        const populateDatalists = (id, arr) => {
+            let result = '';
+            for (const item of arr) {
+                result += `<option value="${item}">`;
+            }
+            document.getElementById(id).innerHTML = result;
+        }
+    </script>
+</body>
+</html>
