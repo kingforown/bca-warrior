@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCA-WARRIOR - Free OTT Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+        .card {
+            background: #1f2937;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.02);
+        }
+        .notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Welcome Notification -->
+    <div id="notification-overlay" class="overlay"></div>
+    <div id="welcome-notification" class="notification bg-gray-800 p-6 rounded-xl shadow-2xl max-w-md w-full mx-4">
+        <div class="text-center">
+            <img src="https://i.imghippo.com/files/IQ2259us.png" 
+                 alt="Abinesh Profile" 
+                 class="w-24 h-24 mx-auto rounded-full mb-4 border-4 border-red-600"
+            />
+            <h2 class="text-2xl font-bold mb-2">𝒲ℯ𝓁𝒸ℴ𝓂ℯ 𝓉ℴ ℬ𝒞𝒜-𝒲𝒜ℛℛℐ𝒪ℛ</h2>
+            <p class="text-gray-300 mb-4">  𝙵𝚘𝚛 𝚞𝚙𝚊𝚍𝚝𝚎  ( 🅾️ king__for_own )</p>
+            <p class="text-gray-300 mb-4">❇️ 𝙰𝚄𝚃𝙾 𝙻𝙾𝙶𝙸𝙽 </p>
+            <p class="text-gray-300 mb-4">🚺 𝙿𝚁𝙴𝙼𝙸𝚄𝙼 𝙱𝙰𝚂𝙸𝙲 𝙿𝙻𝙰𝙽 </p>
+            <p class="text-gray-300 mb-4">🚺 𝙳𝚘𝚗𝚝 𝙲𝚛𝚎𝚊𝚝𝚎 𝙿𝚛𝚘𝚏𝚒𝚕𝚎</p>
+            <p class="text-gray-300 mb-4">❇️ 𝙷𝙳 𝚀𝚞𝚊𝚕𝚒𝚝𝚢 / 𝙳𝙾𝙻𝙱𝚈 5.1 ˢᵘᵖᵖᵒʳᵗ</p>
+            <p class="text-gray-300 mb-4">❌ 𝙰𝚝𝚝𝚎𝚗𝚝𝚒𝚘𝚗 : (𝙳𝚘𝚗𝚝 𝚕𝚘𝚐𝚘𝚞𝚝 𝙰𝚌𝚌𝚘𝚞𝚝 )</p>
+            <button onclick="closeNotification()" 
+                    class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                Continue to Site
+            </button>
+        </div>
+    </div>
+
+    <nav class="bg-black py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-red-600" onclick="showSection('featured')">🏆 𝘽 𝘾 𝘼 - 𝙒 𝘼 𝙍 𝙍 𝙄 𝙊 𝙍 🏆</a>
+            <div class="space-x-6 flex items-center">
+                <a href="https://www.instagram.com/king__for_own/" class="flex items-center space-x-2">
+                    <img src="https://wallpapers-clan.com/wp-content/uploads/2022/01/black-3d-instagram-icon-aesthetic.png" 
+                         width="50" 
+                         height="50" 
+                         alt="Instagram"
+                         class="rounded-full"
+                    />
+                    <span class="text-lg font-semibold">Abinesh</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="featured">
+            <h1 class="text-3xl font-bold mb-8">FREE OTT UPDATES</h1>
+            <div class="content-grid" id="featured-content"></div>
+        </section>
+
+        <section id="movies" class="hidden">
+            <h1 class="text-3xl font-bold mb-8">Movies</h1>
+            <div class="content-grid" id="movies-content"></div>
+        </section>
+
+        <section id="series" class="hidden">
+            <h1 class="text-3xl font-bold mb-8">Series</h1>
+            <div class="content-grid" id="series-content"></div>
+        </section>
+    </main>
+
+    <script>
+        const content = {
+            featured: [
+                {
+                    id: 1,
+                    title: "Hotstar MOD APK ",
+                    image: "https://secure-media.hotstar.com/web-assets/prod/images/Disney+Hotstar.jpg",
+                    type: "[Premium Unlocked]",
+                    downloadLink: "https://download1655.mediafire.com/v4c3sv2fbe4g2_LJtecRyX5GKZ4r27sBF0tikNTqhsL1ayQHcZuIjDxI8gQBUl0lgjTvKaHdn9EQMTX9uRaye7A-MLt6D749zq__ZpP5K270JLPmN7UxXqD5-pyje6yW_OAhpfbH33QBKo_2I6QV4zDClRfz8J3i_5DZKnKhsA6Tbw/8ikzcybgev25ipz/%F0%9D%99%B7%F0%9D%9A%98%F0%9D%9A%9D%F0%9D%9A%9C%F0%9D%9A%9D%F0%9D%9A%8A%F0%9D%9A%9B.apk"
+                },
+                {
+                    id: 2,
+                    title: "Amazon Prime MOD APK",
+                    image: "https://getmodsapk.com/uploads/Amazon-Prime-Mod-Apk0.webp",
+                    type: "[Premium Unlocked]",
+                    downloadLink: "https://download1324.mediafire.com/pxd8os63954gLx5gr4fG-p3TrzMGtkYAj_suRhMl96f7Bwcb44yS4f0hwD4Gb4suBxmosogzRAHtZePGYdVesXLa2AQ59o282by4jc2I6CljluSOh5OkTYDeqISlz_T96V6OMSyRnqPB0u46lgph1xWnGLwk0e2k6pODm5sXjCVdBA/5ayfjl4kor69euf/Amazon+Prime.apk"
+                },
+                {
+                    id: 3,
+                    title: "COMMING Soon.....>>>>",
+                    image: "https://w0.peakpx.com/wallpaper/134/43/HD-wallpaper-netflix-netflix-site.jpg",
+                    type: "Netflix",
+                    downloadLink: "https://t3.ftcdn.net/jpg/05/90/56/72/240_F_590567223_dRAdBFIABC4ZL4zJGfKq4FAVAFM6mhz1.jpg"
+                }
+            ],
+            movies: [],
+            series: []
+        };
+
+        function createCard(item) {
+            return `
+                <div class="card shadow-lg">
+                    <img src="${item.image}" alt="${item.title}" class="w-full h-[400px] object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">${item.title}</h3>
+                        <p class="text-gray-400 mb-4">Type: ${item.type}</p>
+                        <a href="${item.downloadLink}" 
+                           class="inline-flex items-center bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
+                           download>
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                            </svg>
+                            Download
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showSection(sectionName) {
+            document.querySelectorAll('main section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionName).classList.remove('hidden');
+        }
+
+        function closeNotification() {
+            document.getElementById('welcome-notification').style.display = 'none';
+            document.getElementById('notification-overlay').style.display = 'none';
+        }
+
+        function renderContent() {
+            document.getElementById('featured-content').innerHTML = 
+                content.featured.map(createCard).join('');
+            document.getElementById('movies-content').innerHTML = 
+                content.movies.map(createCard).join('');
+            document.getElementById('series-content').innerHTML = 
+                content.series.map(createCard).join('');
+        }
+
+        // Initial render
+        renderContent();
+        showSection('featured');
+    </script>
+</body>
+</html>
