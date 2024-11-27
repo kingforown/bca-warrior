@@ -6,6 +6,7 @@ const features = [
         icon: `<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>`
+        
     },
     {
         name: 'Database Management',
@@ -34,22 +35,22 @@ const features = [
 const subjects = [
     {
         name: 'Python Lab',
-        semester: '1st Semester',
+        semester: '4st Semester',
         image: 'python.webp',
     },
     {
         name: 'Nano Technology',
-        semester: '1st Semester',
+        semester: '4st Semester',
         image: 'Nano Technology.jpg',
     },
     {
         name: 'Andriod Lab',
-        semester: '1st Semester',
+        semester: '4st Semester',
         image: 'Andriod Lab.webp',
     },
     {
         name: 'Cyber Security',
-        semester: '1st Semester',
+        semester: '4st Semester',
         image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
     },
 ];
