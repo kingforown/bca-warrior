@@ -29,7 +29,7 @@
                     <a href="index2.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Subjects</a>
                     <a href="( BCA ) Time Table.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Time table</a>
                     <a href="server maintenance.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">About</a>
-                    <a href="server maintenance.html" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Get Started</a>
+                    <!-- <a href="server maintenance.html" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Get Started</a> -->
                 </div>
             </div>
         </div>
@@ -262,24 +262,24 @@
 
     <script>
         const PERIODS = [
-            { time: '09:00 - 10:00', label: '1st Period' },
-            { time: '10:00 - 11:00', label: '2nd Period' },
-            { time: '11:15 - 12:15', label: '3rd Period' },
-            { time: '12:15 - 13:15', label: 'Lunch', isBreak: true },
-            { time: '13:15 - 14:15', label: '4th Period' },
-            { time: '14:15 - 15:15', label: '5th Period' }
+            { time: '10:00 - 11:00', label: '1st Period' },
+            { time: '11:00 - 12:00', label: '2nd Period' },
+            { time: '12:00 - 01:00', label: '3rd Period' },
+            { time: '01:00 - 02:00', label: 'Lunch', isBreak: true },
+            { time: '02:00 - 03:00', label: '4th Period' },
+            { time: '03:00 - 04:00', label: '5th Period' }
             
         ];
 
         const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday','Saturday'];
 
         const TIMETABLE = {
-            'Monday': ['Minor - 1 Lab', 'Minor - 1 Lab', 'OS', 'Break', 'Andriod', 'Placement'],
-            'Tuesday': ['OS Lab', 'OS Lab', 'Python', 'Break', 'Minor - 1', 'Placement'],
-            'Wednesday': ['Minor - 2 Lab', 'Minor - 2 Lab', 'Python', 'Break', 'Nano Technology', 'Placement'],
-            'Thursday': ['Andriod', 'Minor - 2', 'Nano Technology', 'Break', 'Andriod Lab', 'Andriod Lab'],
-            'Friday': ['Python Lab', 'Python Lab', 'Minor - 1', 'Break', 'Cyber Security', 'OS'],
-            'Saturday': ['OS', 'Minor - 2', 'Cyber Security', 'Break', 'Andriod', 'Python']
+            'Monday': ['Minor - 1 Lab', 'Minor - 1 Lab', 'Python', 'Lunch Break', 'OS', 'Placement'],
+            'Tuesday': ['Python', 'Andriod', 'OS', 'Lunch Break', 'Minor - 1', 'Placement'],
+            'Wednesday': ['Minor - 2 Lab', 'Minor - 2 Lab', 'Andriod', 'Lunch Break', 'Nano Technology', 'Placement'],
+            'Thursday': ['Python', 'Minor - 2', 'Nano Technology', 'Lunch Break', 'OS Lab', 'OS Lab'],
+            'Friday': ['Python', 'OS', 'Placement', 'Lunch Break', 'Cyber Security', 'Cyber Security'],
+            'Saturday': ['OS', 'Minor - 2', 'Cyber Security', 'Lunch Break', 'Python Lab', 'Python Lab']
         };
 
         const SUBJECTS = {
@@ -302,7 +302,7 @@
             'Placement': 'pe',
 
             'Cyber Security': 'abi',
-            'Break': 'break'
+            'Lunch Break': 'break'
         };
 
         function getCurrentPeriod() {
