@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HANDWRITTEN NOTES</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-gray-900">BCA-WARRIOR</span>
+                </div>
+                <div class="hidden sm:flex sm:items-center sm:space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="index2.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Materials</a>
+                    <a href="server maintenance.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">written Notes</a>
+                    <a href="( BCA ) Time Table.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Time table</a>
+                    <a href="https://github.com/kingforown?tab=repositories"><img src="git icon.png" width="30" height="30"</a> 
+                    <a href="server maintenance.html" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Help Center</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+<br>
+
+
+
+
+
+
+
+<!--- STYLE TAG STARTS HERE -->    
+<style>
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+}
+
+/* NAV - BAR */
+.back-arrow {
+    background  : #ffff;
+    position    : fixed;
+    z-index     : 100;
+    height      : 2.9em;
+    width       : 100%;
+    display     : flex;
+    padding     : 0.5em 0 0.2em 0.4em;
+    border-bottom   : 1px solid rgba(0, 0, 0, 0.2);
+    color       : #000;
+
+}.material-symbols-outlined {
+    color       : #000;
+    font-weight : normal;
+    font-size   : 1.8em;
+
+}.nav-heading {
+    width       : 100%;
+    display     : flex;
+    justify-content : space-between;
+
+}.nav-heading p {
+    font-size   : 0.98em;
+    margin      : 0.3em 0 0 1em;
+    font-weight : 600;
+    letter-spacing  : 0.8px;
+
+}.publish-text {
+    font-weight     : normal;
+}
+
+
+/* CONTAINER & CONTENT */
+.container {
+    width        : 100%;
+    height       : auto;
+    display      : flex ;
+    justify-content : center;
+    align-items   : center;
+    background   : #fff;
+}
+.container-content{
+    margin       : 1.5em 0 0 0;
+    padding      : 5em;
+    width        : 60%;
+    height       : auto;
+    background   : #fff;
+    font-family  : 'Lexend', sans-serif; 
+}
+
+
+table {
+    margin-top     : 0.9em;
+    margin-bottom  : 30px;
+    border-collapse: collapse;
+    border         : 1px solid black;
+    width          : 100%;
+
+}
+td {
+    width         : auto;
+    font-size     : 0.9em;
+    height        : 2em;
+    border        : 1px solid #000;
+    padding-left  : 1em;
+    padding-right : 1em;
+    justify-content:center ;
+
+}
+a{
+    text-decoration : none;  
+}
+
+h4{
+    display        : flex;     
+    font-size      : 1.2em;
+    font-weight    : 700;   
+    padding-bottom : 4px;    
+    width          : 98%;
+    border-bottom  : 2px solid orange ;   
+}
+    
+.th{
+    font-weight : 700;
+}
+.year{
+    padding : 0 0 0 1.5em;
+    color : #C04000;
+    font-size : 1em;       
+}
+
+
+.footer-container{
+    width: 75%;
+}
+
+
+
+/* FOOTER */
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    max-width: 1250px;
+    padding: 1em;
+    gap: 1.5em;
+    margin-top: 1em;
+    padding-top: 2em;
+    margin-bottom: -1em;
+    background-color: rgb(252, 252, 252);
+    /* border-top: 1px solid rgb(222, 215, 215); */
+}
+
+.footer-box p{
+    font-size: 1em;
+}
+.footer-box p, .copy p{
+    font-size : 0.9em;
+}
+
+.footer-box .main{
+    font-size: 1.2em;
+    margin: 0em 0 0 0.6em
+}
+
+.footer-box .social-icons{
+    padding-top: 0.5em;
+    width: 12em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-box ul {
+    padding: 0.5em 0 0 1.6em;
+}
+.footer-box ul li{
+    list-style: disc;
+    padding: 0.15em 0 0.15em 0;
+}
+.footer-box ul li a{
+    text-decoration: none;
+    color: #000;
+    transition: .2s ease-in;
+}
+.footer-box ul li a:hover{
+    color: red;
+}
+
+
+/* FOOTER LOGO */
+.footer_logo{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+}
+.footer_logo , p{
+    padding-left: 0.4em;
+}
+.footer_slogan{
+    font-size: 0.8em;
+    margin: -1em 0 0 3.4em;
+}
+.footer-box a{
+    text-decoration: underline;
+}
+
+/* COPYRIGHT */
+.copy{
+    width: 100%;
+    background-color: rgb(252, 252, 252);
+    justify-content: center;
+    text-align: center;
+    padding: 0.5em 0 1.8em 0;
+}
+
+
+@media only screen and (max-width : 680px){
+    
+    .container-content {
+        width       : 100%;
+        padding     : 0.95em;
+        padding-top : 3em;
+    }
+    .footer-container{
+        width: 100%;
+    }
+    /* FOOTER */
+    .footer{
+        border: none;
+        gap: 2em;
+        padding: 1em;
+    }
+    .footer-box{
+        padding: 0em;
+    }
+    .footer_logo{
+        margin: 0.5em 0 0 -0.5em;
+    }.footer_slogan{
+        margin: -1em 0 0 3em;
+    }
+    
+}
+</style>
+
+
+<style>@font-face {
+              font-family: 'Open Sans Regular';
+              font-style: normal;
+              font-weight: 400;
+              src: url('chrome-extension://gkkdmjjodidppndkbkhhknakbeflbomf/fonts/open_sans/open-sans-v18-latin-regular.woff');
+          }</style><style>@font-face {
+              font-family: 'Open Sans Bold';
+              font-style: normal;
+              font-weight: 800;
+              src: url('chrome-extension://gkkdmjjodidppndkbkhhknakbeflbomf/fonts/open_sans/OpenSans-Bold.woff');
+          }</style><style>@font-face {
+              font-family: 'Open Sans ExtraBold';
+              font-style: normal;
+              font-weight: 800;
+              src: url('chrome-extension://gkkdmjjodidppndkbkhhknakbeflbomf/fonts/open_sans/open-sans-v18-latin-800.woff');
+          }</style><style type="text/css" id="mytempCss">._8mqQwQ { display: none; } ._1TWLMK.icF5zO { opacity: 0.01; }</style></head>
+<!-- BODY TAG STARTS HERE -->
+<body>
+
+
+
+<!-- CONTAINER -->
+<div class="container">        
+    <!-- CONTAINER CONTENT -->
+    <div class="container-content">
+        <br> <h4> HANDWRITTEN NOTES  📋🖋</h4>  <br><br>    
+
+        <!-- I - SEM  --> 
+          <center><h3> BCA IV SEMESTER</h3></center>
+        
+        <table> <tbody>
+            
+            <tr>
+                <td class="th">TITLE</td>
+                <td class="th">AUTHOR</td>
+                <td class="th">PREV </td> 
+                <td class="th">Last Updated</td> 
+                <td class="th">Availability</td> 
+            </tr>
+            
+            <tr>
+                <td>Python Programming</td>
+                <td> - </td>
+                <td><a href="#"><p style="color:blue;">Prev</p></a></td>
+                <td> - </td>
+                <td> ❌  </td>
+            </tr>
+            
+            <tr>
+                <td>Operating System</td>
+                <td> - </td>
+                <td><a href="#"><p style="color:blue;">Prev</p></a></td>
+                <td> - </td>
+                <td> ❌  </td>
+            </tr>
+            <tr>
+                <td>Mobile Application Development Using Andriod</td>
+                <td><a href="#">-</a></td>
+                <td><a href="#"><p style="color:blue;">Prev</p></a></td>
+                <td> - </td>
+                <td> ❌  </td>
+            </tr>
+            <tr>
+                <td>Digital Marketing</td>
+                <td><a href="#">-</a></td>
+                <td><a href="#"><p style="color:blue;">Prev</p></a></td>
+                <td> - </td>
+                <td> ❌  </td>
+            </tr>
+            <tr>
+                <td>Cyber Security</td>
+                <td><a href="#">Rajeshwari Madam</a></td>
+                <td><a href="https://drive.google.com/file/d/11VE0gclO8M47RNZEQRzDCFn6aK-b8PdV/view?usp=drive_link"><p style="color:blue;">Prev</p></a></td>
+                <td> 13/12/2025 </td>
+                <td> ✅️  </td>
+            </tr>
+            <tr>
+                <td>Nanotechnology</td>
+                <td><a href="#">-</a></td>
+                <td><a href="#"><p style="color:blue;">Prev</p></a></td>
+                <td> - </td>
+                <td> ❌ </td>
+            </tr>
+            <tr>
+                <td>Human Resource Management</td>
+                <td><a href="#">-</a></td>
+                <td><a href="#"><p style="color:blue;">Prev</p></a></td>
+                <td> - </td>
+                <td> ❌  </td>
+            </tr>
+
+            
+            
+
+
+
+
+
+
+    
+</body></html>
