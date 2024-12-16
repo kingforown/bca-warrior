@@ -40,31 +40,43 @@
   <br>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handwritten Notes - BCA IV Semester</title>
-    <link rel="stylesheet" href="https://unpkg.com/lucide-icons/dist/umd/lucide.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* CSS Variables */
-        :root {
-            --primary-color: #2563eb;
-            --primary-dark: #1d4ed8;
-            --text-light: #f8fafc;
-            --text-dark: #1f2937;
-            --gray-light: #f3f4f6;
-            --gray-medium: #9ca3af;
-            --gray-dark: #4b5563;
-            --success-bg: #dcfce7;
-            --success-text: #166534;
-            --error-bg: #fee2e2;
-            --error-text: #991b1b;
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-
-        /* Reset & Base Styles */
+        /* Base styles */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -72,48 +84,53 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
-                        "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--gray-light);
-            color: var(--text-dark);
-            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+            background-color: rgb(249, 250, 251);
+            min-height: 100vh;
+            padding: 2rem 1rem;
         }
 
-        /* Layout Components */
+        /* Container styles */
         .container {
             max-width: 72rem;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            margin: 0 auto;
         }
 
         .card {
             background: white;
-            border-radius: 0.5rem;
-            box-shadow: var(--shadow-sm), var(--shadow-md);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
             overflow: hidden;
         }
 
-        /* Header Styles */
+        /* Header styles */
         .header {
-            background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
-            padding: 1.5rem;
-            color: var(--text-light);
+            background: linear-gradient(to right, #2563eb, #1d4ed8);
+            padding: 1.5rem 2rem;
+            color: white;
         }
 
-        .header h1 {
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .header-title {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             font-size: 1.5rem;
-            font-weight: bold;
+            font-weight: 700;
         }
 
-        .header p {
-            margin-top: 0.5rem;
-            opacity: 0.9;
+        .header-subtitle {
+            color: #bfdbfe;
+            font-weight: 600;
         }
 
-        /* Table Styles */
+        /* Table styles */
         .table-container {
             overflow-x: auto;
         }
@@ -124,102 +141,94 @@
         }
 
         th {
-            background-color: var(--gray-light);
+            background-color: rgb(249, 250, 251);
             padding: 1rem 1.5rem;
             text-align: left;
             font-size: 0.875rem;
             font-weight: 600;
-            color: var(--gray-dark);
+            color: rgb(75, 85, 99);
         }
 
         td {
             padding: 1rem 1.5rem;
-            font-size: 0.875rem;
-            color: var(--text-dark);
+            color: rgb(55, 65, 81);
         }
 
         tbody tr {
-            border-top: 1px solid var(--gray-light);
-            transition: background-color 0.2s ease;
+            border-top: 1px solid rgb(243, 244, 246);
+            transition: background-color 0.2s;
         }
 
         tbody tr:hover {
-            background-color: var(--gray-light);
+            background-color: rgb(249, 250, 251);
         }
 
-        /* Button Styles */
-        .prev-button {
-            color: var(--primary-color);
+        /* Button styles */
+        .preview-button {
+            color: #2563eb;
             background: none;
             border: none;
-            font-size: 0.875rem;
             font-weight: 500;
             cursor: pointer;
-            transition: color 0.2s ease;
+            transition: color 0.2s;
         }
 
-        .prev-button:hover {
-            color: var(--primary-dark);
+        .preview-button:hover {
+            color: #1d4ed8;
         }
 
-        /* Status Badge Styles */
+        /* Status badge styles */
         .status-badge {
             display: inline-flex;
             align-items: center;
             padding: 0.25rem 0.75rem;
             border-radius: 9999px;
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             font-weight: 500;
-            gap: 0.25rem;
         }
 
         .status-available {
-            background-color: var(--success-bg);
-            color: var(--success-text);
+            background-color: #dcfce7;
+            color: #166534;
         }
 
         .status-unavailable {
-            background-color: var(--error-bg);
-            color: var(--error-text);
+            background-color: #fee2e2;
+            color: #991b1b;
         }
 
-        /* Icon & Timestamp Styles */
-        .timestamp {
+        /* Icon styles */
+        .icon-container {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--gray-medium);
         }
 
-        [data-lucide] {
-            width: 1rem;
-            height: 1rem;
+        .icon {
+            width: 1.25rem;
+            height: 1.25rem;
         }
 
-        /* Footer Styles */
+        /* Footer styles */
         .footer {
-            text-align: center;
             margin-top: 1rem;
-            color: var(--gray-dark);
+            text-align: center;
+            color: rgb(107, 114, 128);
             font-size: 0.875rem;
         }
 
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .container {
-                margin: 1rem auto;
-            }
-
-            th, td {
-                padding: 0.75rem 1rem;
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.5rem;
             }
 
             .header {
                 padding: 1rem;
             }
 
-            .header h1 {
-                font-size: 1.25rem;
+            th, td {
+                padding: 0.75rem 1rem;
             }
         }
     </style>
@@ -228,132 +237,32 @@
     <div class="container">
         <div class="card">
             <!-- Header -->
-            <header class="header">
+            <div class="header">
                 <div class="header-content">
-                    <h1>
-                        <!-- <i data-lucide="file-text"></i> -->
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        HANDWRITTEN NOTES 📝
-                    </h1>
-                    <center><h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HINDU COLLEGE - BCA IV SEMESTER</h1></center>
+                    <div class="header-title">
+                        <i data-lucide="file-text" class="icon"></i>
+                        HANDWRITTEN NOTES
+                    </div>
+                    <div class="header-subtitle">
+                        HINDU COLLEGE - BCA IV SEMESTER
+                    </div>
                 </div>
-            </header>
+            </div>
 
             <!-- Table -->
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th>TITLE</th>
+                            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TITTLE OF YOUR SUBJECT</th>
                             <th>AUTHOR</th>
-                            <th>PREV</th>
-                            <th>Last Updated</th>
-                            <th>Availability</th>
+                            <th>PREVIEW</th>
+                            <th>LAST UPDATED</th>
+                            <th>STATUS</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Python Programming</td>
-                            <td>-</td>
-                            <td><button class="prev-button">Click Here</button></td>
-                            <td>
-                                <span class="timestamp">
-                                    <i data-lucide="clock"></i>
-                                    -
-                                </span>
-                            </td>
-                            <td>
-                                <span class="status-badge status-unavailable">
-                                    <i data-lucide="x"></i>
-                                    Unavailable
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Operating System</td>
-                            <td>-</td>
-                            <td><button class="prev-button">Click Here</button></td>
-                            <td>
-                                <span class="timestamp">
-                                    <i data-lucide="clock"></i>
-                                    -
-                                </span>
-                            </td>
-                            <td>
-                                <span class="status-badge status-unavailable">
-                                    <i data-lucide="x"></i>
-                                    Unavailable
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Mobile Application Development Using Android</td>
-                            <td>-</td>
-                            <td><button class="prev-button">Click Here</button></td>
-                            <td>
-                                <span class="timestamp">
-                                    <i data-lucide="clock"></i>
-                                    -
-                                </span>
-                            </td>
-                            <td>
-                                <span class="status-badge status-unavailable">
-                                    <i data-lucide="x"></i>
-                                    Unavailable
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Cyber Security</td>
-                            <td>Rajeshwari Madam</td>
-                            <td><button class="prev-button">Click Here</button></td>
-                            <td>
-                                <span class="timestamp">
-                                    <i data-lucide="clock"></i>
-                                    13/12/2024
-                                </span>
-                            </td>
-                            <td>
-                                <span class="status-badge status-available">
-                                    <i data-lucide="check"></i>
-                                    Available
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Nanotechnology</td>
-                            <td>-</td>
-                            <td><button class="prev-button">Click Here</button></td>
-                            <td>
-                                <span class="timestamp">
-                                    <i data-lucide="clock"></i>
-                                    -
-                                </span>
-                            </td>
-                            <td>
-                                <span class="status-badge status-unavailable">
-                                    <i data-lucide="x"></i>
-                                    Unavailable
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Human Resource Management</td>
-                            <td>-</td>
-                            <td><button class="prev-button">Click Here</button></td>
-                            <td>
-                                <span class="timestamp">
-                                    <i data-lucide="clock"></i>
-                                    -
-                                </span>
-                            </td>
-                            <td>
-                                <span class="status-badge status-unavailable">
-                                    <i data-lucide="x"></i>
-                                    Unavailable
-                                </span>
-                            </td>
-                        </tr>
+                    <tbody id="notes-table-body">
+                        <!-- Table content will be dynamically populated -->
                     </tbody>
                 </table>
             </div>
@@ -361,15 +270,120 @@
 
         <!-- Footer -->
         <footer class="footer">
-            📅   𝓛𝓪𝓼𝓽 𝓾𝓹𝓭𝓪𝓽𝓮𝓭: 𝓓𝓮𝓬𝓮𝓶𝓫𝓮𝓻 13, 2024
+            © 📅 𝓛𝓪𝓼𝓽 𝓾𝓹𝓭𝓪𝓽𝓮𝓭: 𝓓𝓮𝓬𝓮𝓶𝓫𝓮𝓻 13, 2024.
         </footer>
     </div>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
+        // Initialize Lucide icons
         lucide.createIcons();
+
+        // Notes data
+        const notes = [
+            {
+                title: "Python Programming",
+                author: "-",
+                previewUrl: "server maintenance.html",
+                lastUpdated: "-",
+                isAvailable: false
+            },
+            {
+                title: "Operating System",
+                author: "-",
+                previewUrl: "server maintenance.html",
+                lastUpdated: "-",
+                isAvailable: false
+            },
+            {
+                title: "Mobile Application Development Using Android",
+                author: "-",
+                previewUrl: "server maintenance.html",
+                lastUpdated: "-",
+                isAvailable: false
+            },
+            {
+                title: "Digital Marketing",
+                author: "-",
+                previewUrl: "server maintenance.html",
+                lastUpdated: "-",
+                isAvailable: false
+            },
+            {
+                title: "Human Resource Management",
+                author: "Rajeshwari Madam",
+                previewUrl: "https://drive.google.com/file/d/11VE0gclO8M47RNZEQRzDCFn6aK-b8PdV/view?usp=drive_link",
+                lastUpdated: "13/12/2024",
+                isAvailable: true
+            },
+            {
+                title: "Cyber Security",
+                author: "-",
+                previewUrl: "server maintenance.html",
+                lastUpdated: "-",
+                isAvailable: false
+            },
+            {
+                title: "Introduction to Nanotechnology",
+                author: "-",
+                previewUrl: "server maintenance.html",
+                lastUpdated: "-",
+                isAvailable: false
+            }
+        ];
+
+        // Function to render notes table
+        function renderNotesTable() {
+            const tableBody = document.getElementById('notes-table-body');
+            tableBody.innerHTML = notes.map(note => `
+                <tr>
+                    <td>
+                        <div class="icon-container">
+                            <i data-lucide="book-open" class="icon" style="color: #2563eb;"></i>
+                            <span>${note.title}</span>
+                        </div>
+                    </td>
+                    <td>${note.author}</td>
+                    <td>
+                        <button class="preview-button" onclick="window.open('${note.previewUrl}', '_blank')">
+                            Click Here
+                        </button>
+                    </td>
+                    <td>
+                        <div class="icon-container">
+                            <i data-lucide="clock" class="icon"></i>
+                            <span>${note.lastUpdated}</span>
+                        </div>
+                    </td>
+                    <td>
+                        ${note.isAvailable 
+                            ? `<span class="status-badge status-available">
+                                <i data-lucide="check" class="icon"></i>
+                                Available
+                               </span>`
+                            : `<span class="status-badge status-unavailable">
+                                <i data-lucide="x" class="icon"></i>
+                                Unavailable
+                               </span>`
+                        }
+                    </td>
+                </tr>
+            `).join('');
+            
+            // Reinitialize icons for dynamically added content
+            lucide.createIcons();
+        }
+
+        // Initial render
+        renderNotesTable();
     </script>
 </body>
+</html>
+
+
+
+
+
+
 <br>
 <br>
     <!-- Footer -->
