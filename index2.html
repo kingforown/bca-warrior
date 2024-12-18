@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+  
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study-Materials</title>
+    <title>Study-Material-bca</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -24,51 +25,367 @@
                     <a href="HANDWRITTEN NOTES.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">𝐰𝐫𝐢𝐭𝐭𝐞𝐧 𝐍𝐨𝐭𝐞𝐬</a>
                     <a href="( BCA ) Time Table.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">𝐓𝐢𝐦𝐞 𝐭𝐚𝐛𝐥𝐞</a>
                     <a href="https://github.com/kingforown?tab=repositories"><img src="git icon.png" width="30" height="30"</a> 
-                    <a href="https://wa.me/9442797657?text=Need Help From Bca Team" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">ʜᴇʟᴘ ᴄᴇɴᴛᴇʀ</a>
+                    <a href="https://wa.me/9442797657?text=Need Help From Bca Team" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">ʜᴇʟᴘ ᴄᴇɴᴛᴇʀ</a>               
                 </div>
             </div>
         </div>
     </nav>
+<br>
+<br>
+<br>
 
-<br>
-<br>
-<br>
+
+
+  <br>
+  <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handwritten Notes - BCA IV Semester</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Base styles */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: rgb(249, 250, 251);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 72rem;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            overflow: hidden;
+        }
+
+        /* Header styles */
+        .header {
+            background: linear-gradient(to right,#62b840, #2563eb, #db1fcc);
+            padding: 1.5rem 2rem;
+            color: white;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .header-subtitle {
+            color: #bfdbfe;
+            font-weight: 600;
+        }
+
+        /* Table styles */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: rgb(249, 250, 251);
+            padding: 1rem 1.5rem;
+            text-align: left;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: rgb(75, 85, 99);
+        }
+
+        td {
+            padding: 1rem 1.5rem;
+            color: rgb(55, 65, 81);
+        }
+
+        tbody tr {
+            border-top: 1px solid rgb(243, 244, 246);
+            transition: background-color 0.2s;
+        }
+
+        tbody tr:hover {
+            background-color: rgb(249, 250, 251);
+        }
+
+        /* Button styles */
+        .preview-button {
+            color: #2563eb;
+            background: none;
+            border: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .preview-button:hover {
+            color: #ff01dd;
+        }
+
+        /* Status badge styles */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .status-available {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        .status-unavailable {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* Icon styles */
+        .icon-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .icon {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        /* Footer styles */
+        .footer {
+            margin-top: 1rem;
+            text-align: center;
+            color: rgb(107, 114, 128);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .header {
+                padding: 1rem;
+            }
+
+            th, td {
+                padding: 0.75rem 1rem;
+            }
+        }
+    </style>
+</head>
 <body>
-        <br>
-        <br>
+    <div class="container">
+        <div class="card">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-content">
+                    <div class="header-title">
+                        <i data-lucide="file-text" class="icon"></i>
+                        STUDY MATERIALS
+                    </div>
+                    <div class="header-subtitle">
+                        HINDU COLLEGE - BCA IV SEMESTER
+                    </div>
+                </div>
+            </div>
 
-            <section class="container">
-             <center>   <h1>  BCA  PYTHON  PROGRAMS  LIST  📖</h1></center>
-                <!-- <p class="note">A student has to choose any TWO of the following four courses</p> -->
+            <!-- Table -->
+            <div class="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th>S.No.</th>
-                            <th>Semester - 4</th>
-                            <th>Document</th>
+                            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TITTLE OF YOUR SUBJECT</th>
+                            <th>AUTHOR</th>
+                            <th>PREVIEW</th>
+                            <th>LAST UPDATED</th>
+                            <th>STATUS</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>PYTHON  PROGRAMS</td>
-                            <td><a href="https://drive.google.com/file/d/1otmrDkCXKVEEdF0h1qMK1xZy51QwoG9I/view?usp=drive_link">Click Here</a></td>
-                        </tr>
-                         <tr>
-                            <td>2</td>
-                            <td>Operating System Unit 1 </td>
-                            <td><a href="https://drive.google.com/file/d/1im5KPqEd_j_gzrSxGJ5DC6yYObYHyu4z/view?usp=sharing">Click Here</a></td>
-                        </tr>
+                    <tbody id="notes-table-body">
+                        <!-- Table content will be dynamically populated -->
                     </tbody>
                 </table>
-            </section>
-
-
+            </div>
         </div>
-        <br>
-        <br>
+
+        <!-- Footer -->
+        <footer class="footer">
+            © 📅 𝓛𝓪𝓼𝓽 𝓾𝓹𝓭𝓪𝓽𝓮𝓭: 𝓓𝓮𝓬𝓮𝓶𝓫𝓮𝓻 18, 2024.
+        </footer>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Notes data
+        const notes = [
+            {
+                title: "Python Programming",
+                author: "-",
+                previewUrl: "server maintenance.html",
+                lastUpdated: "-",
+                isAvailable: false
+            },
+            {
+                title: "Operating System",
+                author: "-",
+                previewUrl: "server maintenance.html",
+                lastUpdated: "-",
+                isAvailable: false
+            },
+            {
+                title: "Mobile Application Development Using Android",
+                author: "-",
+                previewUrl: "server maintenance.html",
+                lastUpdated: "-",
+                isAvailable: false
+            },
+            {
+                title: "Digital Marketing",
+                author: "-",
+                previewUrl: "server maintenance.html",
+                lastUpdated: "-",
+                isAvailable: false
+            },
+            {
+                title: "Human Resource Management",
+                author: "-",
+                previewUrl: "-",
+                lastUpdated: "-",
+                isAvailable: false
+            },
+            {
+                title: "Cyber Security ( UNIT - 1 )",
+                author: "-",
+                previewUrl: "https://drive.google.com/file/d/1QP8Yx3kqSnul16aDHaq71woGvW2M-3vP/view?usp=drive_link",
+                lastUpdated: "18/12/2024",
+                isAvailable: true
+            },
+            {
+                title: "Introduction to Nanotechnology",
+                author: "-",
+                previewUrl: "server maintenance.html",
+                lastUpdated: "-",
+                isAvailable: false
+            }
+        ];
+
+        // Function to render notes table
+        function renderNotesTable() {
+            const tableBody = document.getElementById('notes-table-body');
+            tableBody.innerHTML = notes.map(note => `
+                <tr>
+                    <td>
+                        <div class="icon-container">
+                            <i data-lucide="book-open" class="icon" style="color: #2563eb;"></i>
+                            <span>${note.title}</span>
+                        </div>
+                    </td>
+                    <td>${note.author}</td>
+                    <td>
+                        <button class="preview-button" onclick="window.open('${note.previewUrl}', '_blank')">
+                            Click Here
+                        </button>
+                    </td>
+                    <td>
+                        <div class="icon-container">
+                            <i data-lucide="clock" class="icon"></i>
+                            <span>${note.lastUpdated}</span>
+                        </div>
+                    </td>
+                    <td>
+                        ${note.isAvailable 
+                            ? `<span class="status-badge status-available">
+                                <i data-lucide="check" class="icon"></i>
+                                Available
+                               </span>`
+                            : `<span class="status-badge status-unavailable">
+                                <i data-lucide="x" class="icon"></i>
+                                Unavailable
+                               </span>`
+                        }
+                    </td>
+                </tr>
+            `).join('');
+            
+            // Reinitialize icons for dynamically added content
+            lucide.createIcons();
+        }
+
+        // Initial render
+        renderNotesTable();
+    </script>
+</body>
+</html>
 
 
+
+
+
+
+<br>
+<br>
     <!-- Footer -->
     <footer class="bg-white">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -135,83 +452,3 @@
     <title>Languages and Skill Courses</title>
     <link rel="stylesheet" href="abi.css">
 </head>
-
-
-<!-- <body>
-    <div class="container">
-        <section class="languages">
-            <h2>LANGUAGES</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>S.No.</th>
-                        <th>Title</th>
-                        <th>Document</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>English</td>
-                        <td><a href="#">Click Here</a></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Hindi</td>
-                        <td><a href="#">Click Here</a></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Telugu</td>
-                        <td><a href="#">Click Here</a></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Sanskrit</td>
-                        <td><a href="#">Click Here</a></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Urdu</td>
-                        <td><a href="#">Click Here</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="skill-courses">
-            <h2>SKILL COURSES</h2>
-            <p class="note">A student has to choose any TWO of the following four courses</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>S.No.</th>
-                        <th>Semester - 4</th>
-                        <th>Document</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Entrepreneurship Development</td>
-                        <td><a href="#">Click Here</a></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Leadership Skills</td>
-                        <td><a href="#">Click Here</a></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Analytical Skills</td>
-                        <td><a href="#">Click Here</a></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Communication Skills</td>
-                        <td><a href="#">Click Here</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </div> -->
